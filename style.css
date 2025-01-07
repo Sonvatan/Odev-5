@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    background-color: gainsboro;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    background-color: green;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    padding: 40px;
+    width: 100%;
+}
+
+.input-group{
+    align-items: center;
+}
+
+.ul li.checked{
+    text-decoration: line-through;
+    background: #888;
+    color: #fff;
+}
+
+.close{
+    padding: 12px 16px 12px 16px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-item {
+    justify-content: space-between;
+    border: 1px solid #ddd;
+    align-items: center;
+    margin-bottom: 6px;
+    border-radius: 2px;
+    display: flex;
+    padding: 10px;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task-text {
+    flex-grow: 1;
+}
+
+.icon {
+    margin-left: 10px;
+    cursor: pointer;
+    color: hotpink;
+}
+
+.icon:hover {
+    color: #ff69b4;
+}
+
