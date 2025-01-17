@@ -3,8 +3,7 @@ var items = ['Vacuum the carpet', 'Sweep', 'Wash the dishes'];
 var list = document.querySelector('#myList');
 
 items.forEach(function(item) {
-  
-    
+     
 });
 
 
@@ -17,7 +16,7 @@ list.addEventListener('click', function(item) {
 });
 
 
-document.querySelector('#btnCreate').onclick=function() {
+document.querySelector('#btnCreate').onclick = function(){;
 
 
     var item = document.querySelector('#txtItem').value;
@@ -57,4 +56,7 @@ function editTask(element) {
       element.parentElement.remove();
     }
   };
+ 
+  
+  
   

@@ -11,8 +11,25 @@
     </header>
     <body>
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 mt-5">
+            <div id="todo" class="row justify-content-center">
+                 <div class="card mt-2">
+                    <ul id="myList" class="list-group list-group-flush">
+                    </ul>  
+                </div>
+            </div>
+        </div>
+    </div>
+        <script>
+            fetch("http://127.1.1.0:3000/getTodo", {
+                "Access-Control-Allow-Origin": "*"   
+            })
+                .then((res) => {
+                    return res.json();
+                })
+                .then((res) => {
+                    const todoElement = document.getElementById("todo");
+                    res.payload.forEach((item) => {
+                        todoElement.innerHTML +=` <div class="col-lg-6 col-md-8 mt-5">
                     <div class="card">
                         <div class="card-body">
                             <h4>New Todo:</h4>
@@ -53,23 +70,8 @@
                               <span class="icon" onclick="editTask(this)">✏️</span>
                               <span class="icon" onclick="deleteTask(this)">🗑️</span>
                             </li>
-                        </ul>
-                    <div class="card mt-2">
-                          <ul id="myList" class="list-group list-group-flush">
-                        </ul>  
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script>
-            fetch("localhost:3000/getTodo", {
-                "Access-Control-Allow-Origin": "*"   
-            })
-                .then((res) => {
-                    return res.json();
-                })
-                .then((res) => {
-                    console.log("Response:", res);
+                        </ul>`
+                    });
                 })
                 .catch((err) => {
                     alert(err.message);
