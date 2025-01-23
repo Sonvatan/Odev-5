@@ -1,10 +1,11 @@
 *{
     padding: 0;
     margin: 0;
-}
+ }
+
 html, body {
-    background-color: gainsboro;
-    font-family: sans-serif;
+    background-color: gray;
+    font-family: Arial;
     height: 100%;
     width: 100%;
 }
@@ -12,60 +13,113 @@ html, body {
 header {
     background-color: green;
     justify-content: center;
-    align-items: center;
+    font-size: 20px;
+    padding: 20px;
     color: white;
     display: flex;
-    padding: 40px;
     width: 100%;
 }
 
-.input-group{
-    align-items: center;
+.content-new {
+    flex-direction: column;
+    background: #fff;
+    margin: 10px auto;
+    max-width: 600px;
+    font-size: 20px;
+    padding: 20px;
+    display: flex; 
 }
 
-.ul li.checked{
-    text-decoration: line-through;
-    background: #888;
-    color: #fff;
-}
-
-.close{
-    padding: 12px 16px 12px 16px;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.task-list {
-    list-style: none;
-    padding: 0;
-}
-
-.task-item {
-    justify-content: space-between;
-    border: 1px solid #ddd;
-    align-items: center;
-    margin-bottom: 6px;
-    border-radius: 2px;
+.content-edit {
+    flex-direction: column;
+    background: #fff;
+    text-align: right;
+    margin: 10px auto;
+    max-width: 600px;
+    font-size: 20px;
+    padding: 20px;
     display: flex;
-    padding: 10px;
 }
 
-.task-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.task-text {
-    flex-grow: 1;
-}
-
-.icon {
-    margin-left: 10px;
+button {
+    background-color: #4CAF50;
+    border: 10px solid red;
+    border-radius: 4px;
+    font-size: 20px;
     cursor: pointer;
-    color: hotpink;
+    transition: 1s;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+} 
+
+button:hover{
+    background-color: transparent;
+    background-color: #45a049;
+    border: 1px solid red;   
+    cursor: pointer;
 }
 
-.icon:hover {
-    color: #ff69b4;
+.actions button {
+    padding: 5px 10px;
 }
+
+.actions button i {
+    font-size: 20px;
+}
+
+input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 20px;
+    padding: 5px;
+    flex: 1;
+}
+
+.input-group{
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.edit-group{
+    align-items: center;
+    display: flex;
+}
+
+#newTodoInput {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.todo-item {
+    border-bottom: 1px solid black;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    align-items: center;
+    display: flex;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-item span {
+    font-size: 20px;
+}
+
+#editInput {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
 

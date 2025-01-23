@@ -2,82 +2,60 @@
     <head>
         <meta charset="UTF-8">
         <title>Ödev-5</title>
-        <link rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
-        </head>
-    <header>
-        <h1>Ödev-5</h1>
-    </header>
+    </head>
     <body>
-        <div class="container">
-            <div id="todo" class="row justify-content-center">
-                 <div class="card mt-2">
-                    <ul id="myList" class="list-group list-group-flush">
-                    </ul>  
+        <header>
+            <h1>Ödev-5</h1>
+        </header>
+        <div
+            class="container"
+        >
+            <div
+                class="content-new"
+            >
+                <div
+                    class="header"
+                >
+                    New Todo:
+                    </div>
+                    <div
+                        class="input-group"
+                    >
+                        <input
+                            type="text"
+                            id="newTodoInput"
+                            placeholder="Enter a task..."
+                        />
+                        <button onclick="addTodo()">Add</button>
+                    </div>
+               </div>
+                <div
+                class="content-edit"
+            >
+                <div
+                    class="edit-group"
+                    id="editGroup"
+                >
+                    <div
+                        class="header"
+                    >
+                        Edit:
+                    </div>
+                        <input
+                            type="text"
+                            id="editInput"
+                        />
+                        <button onclick="saveTodo()">Save</button>
+                    </div>
+                <div
+                    class="mete-list"
+                        id="mete"
+                    >
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-        <script>
-            fetch("http://127.1.1.0:3000/getTodo", {
-                "Access-Control-Allow-Origin": "*"   
-            })
-                .then((res) => {
-                    return res.json();
-                })
-                .then((res) => {
-                    const todoElement = document.getElementById("todo");
-                    res.payload.forEach((item) => {
-                        todoElement.innerHTML +=` <div class="col-lg-6 col-md-8 mt-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h4>New Todo:</h4>
-                            <div class="input-group">
-                                <input type="text" id="txtItem" class="form-control" title="title">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type=button>Add</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="input-group">
-                                <div class="">Edit:</div>
-                                <input type="text" id="textItem" class="form-control" placeholder="Mow the lawn">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type=button id="btnCreate">Save</button>
-                                </div>
-                            </div>
-                        </div>
-                        <ul class="task-list">
-                            <li class="task-item">
-                              <input type="checkbox">
-                              <span class="task-text">Vacuum the carpet</span>
-                              <span class="icon" onclick="editTask(this)">✏️</span>
-                              <span class="icon" onclick="deleteTask(this)">🗑️</span>
-                            </li>
-                            <li class="task-item">
-                              <input type="checkbox">
-                              <span class="task-text">Sweep</span>
-                              <span class="icon" onclick="editTask(this)">✏️</span>
-                              <span class="icon" onclick="deleteTask(this)">🗑️</span>
-                            </li>
-                            <li class="task-item">
-                              <input type="checkbox">
-                              <span class="task-text">Wash the dishes</span>
-                              <span class="icon" onclick="editTask(this)">✏️</span>
-                              <span class="icon" onclick="deleteTask(this)">🗑️</span>
-                            </li>
-                        </ul>`
-                    });
-                })
-                .catch((err) => {
-                    alert(err.message);
-                    console.error(err);
-                });
-        </script>
-        <script type="text/javascript" src="script.js"></script>
+           <script src="script.js"></script>
+           <script src="https://kit.fontawesome.com/cacd7d94a3.js" crossorigin="anonymous"></script>
     </body>
 </html>
